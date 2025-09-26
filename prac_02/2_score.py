@@ -1,22 +1,37 @@
-import random
-
-
-def get_score_result(score):
-    if score < 0 or score > 100:
-        return "Invalid score"
-    elif score >= 90:
-        return "Excellent"
-    elif score >= 50:
-        return "Passable"
-    else:
-        return "Bad"
+MENU = """C - Convert Celsius to Fahrenheit
+F - Convert Fahrenheit to Celsius
+Q - Quit"""
 
 
 def main():
-    score = float(input("Enter score: "))
-    print(get_score_result(score))
-    random_score = random.randint(0, 100)
-    print(f"Random score: {random_score:.2f} -> {get_score_result(random_score)}")
+    """Display menu and handle temperature conversions."""
+    print(MENU)
+    choice = input(">>> ").upper()
+    while choice != "Q":
+        if choice == "C":
+            fahrenheit = float(input("Fahrenheit: "))
+            celsius = convert_celsius_fahrenheit(fahrenheit)
+            print(f"Result: {celsius:.2f} F")
+        elif choice == "F":
+            fahrenheit = float(input("Celsius: "))
+            print(f"Result: {fahrenheit:.2f} C")
+        else:
+            print("Invalid option")
+        print(MENU)
+        choice = input(">>> ").upper()
+    print("Thank you.")
+
+
+def convert_celsius_fahrenheit(celsius):
+    """Convert Celsius to Fahrenheit."""
+    fahrenheit = celsius * 9.0 / 5 + 32
+    return fahrenheit
+
+
+def convert_fahrenheit_celsius(fahrenheit):
+    """Convert Fahrenheit to Celsius."""
+    celsius = 5 / 9 * (fahrenheit - 32)
+    return celsius
 
 
 main()
