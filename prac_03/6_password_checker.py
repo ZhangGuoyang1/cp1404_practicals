@@ -10,7 +10,7 @@ SPECIAL_CHARACTERS = "!@#$%^&*()_-=+`~,./'[]<>?{}|\\"
 
 
 def main():
-    """Program to get and check a user's password."""
+    """Validate password"""
     print("Please enter a valid password")
     print(f"Your password must be between {MIN_LENGTH} and {MAX_LENGTH} characters, and contain:")
     print("\t1 or more uppercase characters")
@@ -27,7 +27,7 @@ def main():
 
 
 def is_valid_password(password):
-    """Determine if the provided password is valid."""
+    """Validate password length"""
     # TODO: if length is wrong, return False
     if len(password) < MIN_LENGTH or len(password) > MAX_LENGTH:
         print(f"Password must be between {MIN_LENGTH} and {MAX_LENGTH} characters")
