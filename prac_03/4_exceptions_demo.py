@@ -25,6 +25,7 @@ while not valid_input:
         print("Numerator and denominator must be valid numbers!")
     except ZeroDivisionError:
         print("Cannot divide by zero!")
-    print("Finished.")
+
+print("Finished.")
 
 
