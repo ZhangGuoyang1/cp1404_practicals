@@ -10,7 +10,8 @@ print(name, file=out_file)
 out_file.close()
 
 """
-2.In the same file, but as if it were a separate program, write code that opens "name.txt" and reads the name (as above) then prints (note the exact output),
+2.In the same file, but as if it were a separate program, write code that opens "name.txt" and 
+reads the name (as above) then prints (note the exact output),
 Hi Bob! (or whatever the name is in the file). Do not simply print the user's input variable!
 Use open and close for this question.
 """
@@ -20,7 +21,6 @@ in_file = open(FILENAME, "r")
 name = in_file.read().strip()
 print(f"Hi {name}!")
 in_file.close()
-
 
 """
 3.Create a text file called numbers.txt and save it in your prac directory. 
@@ -32,6 +32,7 @@ Write code that opens numbers.txt, reads only the first two numbers,
 adds them together then prints the result, which should be... 59. Use with 
 instead of open and close for this question.
 """
+
 FILENAME = "numbers.txt"
 
 in_file = open(FILENAME, "r")
@@ -41,7 +42,6 @@ in_file.close()
 
 total = first + second
 print(total)
-
 
 """
 4.Now write a fourth block of code that 
