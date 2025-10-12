@@ -4,10 +4,10 @@ RANDOM_NUMBERS = 6
 MINIMUM_NUMBER = 1
 MAXIMUM_NUMBER = 45
 
-quick_pick_number = int(input("Enter number of quick picks: "))
+quick_pick_number = int(input("How many quick picks: "))
 while quick_pick_number <= 0:
     print("Quick pick number is > 0")
-    quick_pick_number = int(input("Enter number of quick picks: "))
+    quick_pick_number = int(input("How many quick picks: "))
 
 for i in range(quick_pick_number):
     numbers = []
