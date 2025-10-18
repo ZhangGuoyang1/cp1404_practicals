@@ -21,6 +21,7 @@ def main():
 
 
 def print_email(email_to_name):
+    """Display names along with their email addresses."""
     for email, name in email_to_name.items():
         print(f"{name} ({email})")
 
