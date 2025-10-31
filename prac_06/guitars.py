@@ -3,6 +3,7 @@ from operator import attrgetter
 
 
 def main():
+    """Collect guitar data from the user, then display all guitars."""
     guitars = []
 
     print("My guitars!")
