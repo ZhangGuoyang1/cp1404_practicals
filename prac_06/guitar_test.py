@@ -3,7 +3,7 @@ from prac_06.guitar import Guitar
 
 def run_test():
     """Test the Guitar class methods with example data."""
-    name = "Gibson L-5 CRS"
+    name = "Gibson L-5 CES"
     year = 1922
     cost = 16035.40
 
@@ -18,3 +18,7 @@ def run_test():
     # Test the is_vintage() method
     print(f"{guitar_1.name} is_vintage() - Expected {True}. Got {guitar_1.is_vintage()}")
     print(f"{guitar_2.name} is_vintage() - Expected {False}. Got {guitar_2.is_vintage()}")
+
+
+if __name__ == "__main__":
+    run_test()
