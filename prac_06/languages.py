@@ -7,8 +7,8 @@ def main():
     ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
     visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
     print(python)
-    print(visual_basic)
     print(ruby)
+    print(visual_basic)
 
     languages = [python, visual_basic, ruby]
     # Display only the dynamically typed languages
