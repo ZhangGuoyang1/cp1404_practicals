@@ -2,10 +2,14 @@ from prac_07.project import Project
 
 
 def main():
-    MENU = "Menu:\n(L)oad projects \n(S)ave projects \n(D)isplay projects \n(F)ilter projects by date"
-            "\n(A)dd new project \n(U)pdate project) \n(Q)uit"
+    MENU = (
+        "Menu:\n(L)oad projects \n(S)ave projects \n(D)isplay projects \n(F)ilter projects by date"
+        "\n(A)dd new project \n(U)pdate project \n(Q)uit"
+    )
 
-    projects = get_file('project.txt')
+    print("Welcome to Pythonic Project Management")
+    projects = get_file('projects.txt')
+    print(f"Loaded {len(projects)} projects from projects.txt")
     print(MENU)
     choice = input(">>>").upper()
     while choice != "Q":
@@ -44,6 +48,7 @@ def display_project_details(projects):
     for number, project in enumerate(projects):
         print(f"{number + 1}  {project}")
 
+
 def update_project(projects):
     """Update project completion percentage according to incomplete and completed projects."""
     projects = sort_projects(projects)
@@ -61,7 +66,7 @@ def update_project(projects):
         if new_percentage != '':
             chosen_project.update_percentage(int(new_percentage))
 
-        if new_priority != ''
+        if new_priority != '':
             chosen_project.update_priority(int(new_priority))
 
     except KeyError:
@@ -76,8 +81,8 @@ def add_project(projects):
         name = input('name: ')
         start_date = input('start date(dd/mm/yy): ')
         priority = int(input('priority: '))
-        cost = int(input('Cost estimate: '))
-        cost = cost.replace('$', '')
+        cost = input('Cost estimate: ').replace('$', '')
+        cost = float(cost)
         cost = int(cost)
         completion = input('percent complete: ')
         project = Project(str(name), str(start_date), str(priority), str(cost), str(completion))
@@ -129,23 +134,24 @@ def sort_projects(projects):
     for project in projects:
         if project.start_date not in date_list:
             date_list.append(project.start_date)
-        date_list.sort()
-        sorted_project = []
-        for date in date_list:
-            for project in projects:
-                if project.start_date == date:
-                    sorted_project.append(project)
-        return sorted_project
+    date_list.sort()
+    sorted_project = []
+    for date in date_list:
+        for project in projects:
+            if project.start_date == date:
+                sorted_project.append(project)
+    return sorted_project
+
 
 def get_file(filename):
     """Load projects from user input filename."""
     projects = []
-    infile = open(filename, 'r')
-    infile.readline()
-    for line in infile:
-        parts = line.strip().replace("\t", "")
+    in_file = open(filename, 'r')
+    in_file.readline()
+    for line in in_file:
+        parts = line.strip().replace("\t", ",")
         parts = parts.split(",")
-        project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+        project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))
         projects.append(project)
     in_file.close()
     return projects
