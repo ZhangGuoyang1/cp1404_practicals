@@ -13,15 +13,17 @@ class Project:
 
     def __str__(self):
         """Return string representation of Project object"""
-        return f"{self.name}, {self.start_date}, {self.priority}, {self.completion}"
+        return (f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, "
+                f"estimate: ${self.cost:.2f}, completion: {self.completion}%")
 
     def __repr__(self):
         """Return string representation of Project object"""
-        return f"{self.name} {self.start_date}, {self.priority}, {self.completion}"
+        return (f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, "
+                f"estimate: ${self.cost:.2f}, completion: {self.completion}%")
 
     def is_complete(self):
         """Verify if Project object is complete"""
-        return int(self.completion) == FULL_COMPLETION
+        return self.completion == FULL_COMPLETION
 
     def __lt__(self, other):
         """Less than, used for sorting project"""
@@ -29,7 +31,7 @@ class Project:
 
     def compare_date(self, input_other):
         """Compare the user_input date with project start date."""
-        input_date = datetime.datetime.strptime(input_other, "%d-%m-%Y").date()
+        input_date = datetime.datetime.strptime(input_other, "%d/%m/%Y").date()
         return self.start_date >= input_date
 
     def update_percentage(self, value):
