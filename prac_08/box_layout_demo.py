@@ -3,6 +3,7 @@ from kivy.lang import Builder
 
 
 class BoxLayoutDemo(App):
+    """Kivy App for greeting the user."""
     def build(self):
         """Create root widget to load kv file"""
         self.title = "Box Layout Demo"
