@@ -9,6 +9,7 @@ SECOND_COLOUR = (1, 0.3, 0.3, 1)  # Light Red
 
 
 class DynamicLabelsApp(App):
+    """Kivy App for dynamic labels."""
     name_display = StringProperty()
 
     def __init__(self, **kwargs):
