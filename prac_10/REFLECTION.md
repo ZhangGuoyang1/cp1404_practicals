@@ -69,7 +69,6 @@ reducing duplicate code and applying function decomposition.
 The highlight of this review is that I not only pointed out the problem, 
 but also gave example solutions and encouraged the other party to optimize the logical structure.
 
-
 ## Practicals
 
 ### Regarding the **practical tasks** overall, what would you change if you were in charge of the subject?
